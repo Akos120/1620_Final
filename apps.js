@@ -21,15 +21,17 @@ images.addEventListener('mouseover', e => {
 })
 
 submitBtn.addEventListener('click', e => {
-    const inputValue = document.querySelector('#effect');
-    if (inputValue.value == 'blur') {
+    const input = document.querySelector('#effect');
+    const inputValue = input.value
+    const noCaseSens = inputValue.toLowerCase();
+    if (noCaseSens == 'blur') {
         let currentImg = document.querySelector('.main-img');
         let currentSrc = currentImg.src;
         let newSrc = currentSrc.substring(0, currentSrc.length-4) + 'B.jpg';
         currentImg.outerHTML = `<img class="main-img" src="${newSrc}">`;
-        inputValue.value = '';
+        input.value = '';
     } else {
         alert('Invalid Effect')
-        inputValue.value = '';
+        input.value = '';
     }
 })
