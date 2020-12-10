@@ -2,10 +2,13 @@ const images = document.querySelector('#thumb-bar');
 const hiddenArea = document.querySelector('.footer')
 const submitBtn = document.querySelector('#button')
 
-
 document.querySelector('#label').style.display = 'none';
 document.querySelector('#input').style.display = 'none';
 document.querySelector('#button').style.display = 'none';
+
+for (i = 1; i <= 5; i++) {
+    images.innerHTML += `<img class="displayed-img" src="images/pic${i}.jpg">`
+}
 
 images.addEventListener('mouseover', e => {
     if (hiddenArea.hidden == false) {
