@@ -1,5 +1,8 @@
 body {
+    display: flex;
     font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    /* font-size: 1.5em; */
 }
 
 .container {
@@ -12,23 +15,23 @@ body {
         "subheading"
         "thumbnail"
         "main"
-        "label";
-        /* "input"
-        "effect"; */
+        "label"
+        "input"
+        "effect";
 }
 
-#header h1 {
+#header {
     display: flex;
     grid-area: header;
     text-align: center;
+    justify-content: center;
     flex-direction: column;
-    font-size: 3em;
 }
 
-#header p {
+#subheader {
     display: flex;
     grid-area: subheading;
-    text-align: justify;
+    text-align: center;
     justify-content: center;
 }
 
@@ -40,23 +43,19 @@ body {
     display: flex;
     grid-area: thumbnail;
     align-items: center;
-    object-fit: contain;
+}
+
+#main-pic img {
+    width: 100%;
 }
 
 #main-pic {
     display: flex;
     grid-area: main;
-    object-fit: contain;
     margin-top: 5px;
 }
 
-.footer {
-    display: flex;
-    grid-area: label;
-    flex-direction: column;
-    align-items: center;
-}
-/* #label {
+#label {
     display: flex;
     grid-area: label;
     justify-content: center;
@@ -74,9 +73,15 @@ body {
     display: flex;
     grid-area: effect;
     justify-content: center;
-} */
+}
 
 @media screen and (min-width: 640px) {
+    body {
+        display: flex;
+        justify-content: center;
+        /* align-self: center; */
+    }
+
     .container {
         width: 640px;
     }
