@@ -1,14 +1,98 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    width: 80vw;
 }
 
-div img {
+.container {
+    display: grid;
+    width: 80vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header"
+        "subheading"
+        "thumbnail"
+        "main"
+        "label";
+        /* "input"
+        "effect"; */
+}
+
+#header h1 {
+    display: flex;
+    grid-area: header;
+    text-align: center;
+    flex-direction: column;
+    font-size: 3em;
+}
+
+#header p {
+    display: flex;
+    grid-area: subheading;
+    text-align: justify;
+    justify-content: center;
+}
+
+#thumb-bar img {
     width: 20%;
 }
 
+#thumb-bar {
+    display: flex;
+    grid-area: thumbnail;
+    align-items: center;
+    object-fit: contain;
+}
+
+#main-pic {
+    display: flex;
+    grid-area: main;
+    object-fit: contain;
+    margin-top: 5px;
+}
+
+.footer {
+    display: flex;
+    grid-area: label;
+    flex-direction: column;
+    align-items: center;
+}
+/* #label {
+    display: flex;
+    grid-area: label;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+
+#input {
+    display: flex;
+    grid-area: input;
+    justify-content: center;
+}
+
+#button {
+    display: flex;
+    grid-area: effect;
+    justify-content: center;
+} */
+
 @media screen and (min-width: 640px) {
-    body {
+    .container {
         width: 640px;
+    }
+
+    #header p {
+        text-align: left;
+    }
+
+    .footer {
+        display: flex;
+        grid-area: label;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #input {
+        padding: 20px;
     }
 }
